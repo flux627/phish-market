@@ -36,7 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "yarn hardhat run scripts/deploy.js --network localhost",
-    "mint": "node scripts/mint.js"
+    "mint": "HARDHAT_NETWORK=localhost node scripts/mint.js"
   },
   "eslintConfig": {
     "extends": [
