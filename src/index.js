@@ -4,7 +4,10 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import './index.css'
 import App from "./App";
+import {Gallery} from "./Gallery";
+
 import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById("root");
@@ -12,7 +15,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-
+        <Route path="/" element={<Gallery />} />
       </Route>
     </Routes>
   </BrowserRouter>,

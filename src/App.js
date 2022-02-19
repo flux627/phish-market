@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from "./Header";
 import {Web3Provider} from "./Web3ProviderContext";
-import {Gallery} from "./Gallery";
 
 function App() {
   return (
