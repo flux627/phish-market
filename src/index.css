@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #888888;
+  color: white;
+}
+
+* {
+  font-family: System, monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+Thin            100
+Extra Light     200
+Light           300
+Regular         400
+Medium          500
+Semi-Bold       600
+Bold            700
+Extra-Bold      800
+Black           900
+*/
+
+/*@font-face {*/
+/*  font-family: 'Roboto';*/
+/*  src: url("./fonts/Roboto-Regular.ttf");*/
+/*  font-style: normal;*/
+/*  font-weight: normal;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'Roboto';*/
+/*  src: url("./fonts/Roboto-Italic.ttf");*/
+/*  font-style: italic;*/
+/*  font-weight: normal;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'Roboto';*/
+/*  font-style: normal;*/
+/*  src: url("./fonts/Roboto-Bold.ttf");*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'Roboto';*/
+/*  font-style: normal;*/
+/*  src: url("./fonts/Roboto-Thin.ttf");*/
+/*  font-weight: 100;*/
+/*}*/
