@@ -22,13 +22,16 @@ export function GalleryItem({ tokenId, metadataUri }) {
 
   return <ItemWrap to={`token/${tokenId}`}>
     {imageCid && <ImagePreviewWrap><ImagePreview src={`https://gateway.pinata.cloud/ipfs/${imageCid}`} /></ImagePreviewWrap>}
-    <Title>{`${tokenId}: ${metadata ? metadata.name : '...'}`}</Title>
+    <Title>{`${metadata ? metadata.name : '...'}`}</Title>
   </ItemWrap>
 }
 
 const Title = styled.div`
   font-size: 18px;
-  margin-bottom: 10px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
 `
 
 const ImagePreview = styled.img`

