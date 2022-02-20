@@ -4,10 +4,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #888888;
   color: white;
+  font-family: System, monospace;
 }
 
-* {
-  font-family: System, monospace;
+button {
+  font-family: inherit;
 }
 
 a {
