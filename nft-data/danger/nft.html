@@ -1,0 +1,506 @@
+<div class="container">
+  <div id="chatModal"></div>
+
+<style type="text/css">
+  #chatModal {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 370px;
+    height: 400px;
+    border: 3px solid #000;
+    box-sizing: border-box;
+    background-color: #eee;
+    transition: 2000ms;
+    transition-timing-function: linear;
+  }
+
+  #chatHeader {
+    font-family: sans-serif;
+    height: 30px;
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #chatModal-x {
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  #chatHistory {
+    height: 300px;
+    background-color: #fff;
+    overflow: auto;
+  }
+
+  #chatInput {
+    width: 100%;
+    height: 75px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border-top: 2px solid #000;
+    resize: none;
+    padding: 3px;
+  }
+
+  .chatLine {
+    padding: 3px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  .chatFrom, .chatContent {
+    display: inline-block;
+  }
+
+
+  .pfp {
+    width: 30px;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+.container {
+
+      background-color: white;
+      color: black;
+      /*background-color: #c1c1c1;*/
+      font-family: sans-serif !important;
+    }
+
+    #header {
+
+      margin: 5px 0;
+      text-align: center;
+      background-color: yellow;
+      border: 1px solid green;
+      padding: 10px;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    .container {
+      margin-top: 10px;
+      box-shadow: 0px 0px 60px #000;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fdfefe;
+      border: 1px solid black;
+    }
+    #timer {
+      font-size: 50px;
+      font-family: sans-serif;
+      border: 4px solid red;
+      display: inline-block;
+      padding: 5px;
+      animation: Blink 2s linear infinite;
+    }
+
+    .vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #submit {
+      cursor: pointer;
+      font-size: 30px;
+      padding: 10px;
+      color:  #126172;
+      background: linear-gradient(#fce34d, #f5a604);
+      border: 3px solid;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+
+
+
+    @keyframes Blink {
+      0% {
+        border: 4px solid red;
+        padding: 5px;
+      }
+
+      1% {
+        border: 0;
+        padding: 0;
+      }
+
+      50% {
+        border: 0;
+        padding: 0;
+      }
+
+      51% {
+        border: 4px solid red;
+        padding: 5px;
+      }
+
+      100% {
+        border: 4px solid red;
+        padding: 5px;
+      }
+    }
+
+
+    .ohno {
+      animation: BGColor 40000ms linear infinite;
+    }
+
+    #successContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      user-select: none;
+      overflow: hidden;
+    }
+
+    .successBox {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      padding: 20px;
+      border: 30px solid;
+      border-radius: 15px;
+      font-family: sans-serif;
+      font-size: 40px;
+      text-shadow: 4px 4px #000;
+
+      transition: 2500ms;
+      animation: BoxSize 5000ms ease infinite;
+    }
+
+    #successBox2 {
+      animation-delay: 833ms
+    }
+
+    #successBox3 {
+      animation-delay: 1665ms
+    }
+
+    #successBox4 {
+      animation-delay: 2500ms
+    }
+
+    #successBox5 {
+      animation-delay: 3330ms
+    }
+
+    #successBox6 {
+      animation-delay: 4164ms
+    }
+
+    .clickHere {
+      text-decoration: underline;
+      /*color: #00ffff;*/
+    }
+
+    @keyframes BoxSize {
+      0% {
+        width: 100vw;
+        height: 100vh;
+        color: #ffff00;
+        box-shadow: 10px 10px 40px #ffff00;
+        transform: rotate(0deg);
+      }
+
+      100% {
+        width: 0;
+        height: 0;
+        padding: 0;
+        color: #ff0000;
+        box-shadow: 1px 1px 40px #ff0000;
+
+        border-width: 5px;
+        transform: rotate(-30deg);
+      }
+    }
+
+
+    @keyframes BGColor {
+      0% {
+        background-color: hsl(0, 100%, 50%);
+        transform: rotate(0deg) rotateY(0) rotateZ(0);
+      }
+
+      17% {
+        background-color: hsl(60deg, 100%, 50%);
+      }
+
+      33% {
+        background-color: hsl(120deg, 100%, 50%);
+      }
+
+      50% {
+        background-color: hsl(180deg, 100%, 50%);
+        transform: rotate(180deg) rotateY(50deg) rotateZ(180deg);
+      }
+
+      66% {
+        background-color: hsl(240deg, 100%, 50%);
+      }
+
+      83% {
+        background-color: hsl(300deg, 100%, 50%);
+      }
+
+      100% {
+        background-color: hsl(360deg, 100%, 50%);
+        transform: rotate(360deg) rotateY(0) rotateZ(0);
+      }
+    }
+</style>
+
+  <div id="header">
+    <h1>BUY THIS NFT NOW</h1>
+    <h2>(before it's too late!)</h2>
+  </div>
+
+
+  <div class="vertical">
+    <div id="timer"></div>
+    <button id="submit">BUY NOW</button>
+  </div>
+
+
+<script type="text/javascript">
+
+  (async () => {
+
+    const $header = document.getElementById('header')
+    const $chatModal = document.getElementById('chatModal')
+    $chatModal.innerHTML = `
+      <div id="chatHeader">
+        <div id="chatModal-x">X</div>
+        <div style="padding: 5px">META MASK TECHNICAL SUPPORT</div>
+      </div>
+      <div id="chatHistory"></div>
+      <textarea id="chatInput" placeholder="PRESS ENTER TO SEND MESSAGE"></textarea>
+    `
+    const $chatInput = $chatModal.querySelector('#chatInput');
+    const $chatHistory = $chatModal.querySelector('#chatHistory');
+    const $sumbit = document.getElementById('submit')
+
+    const smoothTo = (obj, ctx) => (value, timeInSeconds) => {
+      obj.exponentialRampToValueAtTime(value, ctx.currentTime + timeInSeconds)
+    }
+    const $ = (elem, prop, value) => elem.style[prop] = value
+    $($chatModal, 'margin-bottom', '-500px')
+
+
+
+    function displayChat() {
+
+      const MMpfp = '<img src="https://cdn.worldvectorlogo.com/logos/metamask.svg" class="pfp">'
+      const userPfp = '<img class="pfp" src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/240/iconmonstr-smiley-2.png">'
+
+      const MAX_VOLUME = 0.03
+      let gain, source, smoothFreq;
+
+      let inited = false;
+      function init() {
+        if (inited) return;
+        inited = true;
+
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          const ctx = new AudioContext();
+
+          source = ctx.createOscillator();
+          gain = ctx.createGain();
+
+          source.connect(gain)
+          gain.connect(ctx.destination)
+          gain.gain.value = 0
+          smoothFreq = smoothTo(source.frequency, ctx)
+          source.start()
+
+        } catch (e) {
+          console.log(e)
+        }
+      }
+
+      const chatLine = (_from, content) => `
+        <div class="chatLine">
+          <span class="chatFrom">${_from}</span>
+          <span class="chatContent">${content}</span>
+        </div>
+      `
+
+      function *chatResponse() {
+        const name = yield 'Hello, this is Meta-Mask customer support'
+        yield `Hello ${name}, how can i assist you today??`
+        yield `Yes, it's true! FastCashMoneyPlus.biz is the premier digital wealth platform on the internet today. People from all around the globe are accumulating wealth at previously unimaginable rates all thanks to FastCashMoneyPlus.biz. Does that answer your question???`
+        yield `I see... do you need some help getting started?`
+        yield `That's great to hear! To continue, Im gong to need to verify your identity. Cna you please give me your secret pin so i can verify your identity?`
+        yield `I'm glad I could help you today! If you need any more assistance, please contact <a href="mailto:fastcashmoneyplus.biz@gmail.com" target="_blank">fastcashmoneyplus.biz@gmail.com</a> for further assistance`
+        while (true) {
+          yield
+        }
+      }
+      const chatResponder = chatResponse()
+      $chatHistory.innerHTML += chatLine(MMpfp, chatResponder.next().value)
+
+      function newMessage(from_, msg) {
+        $chatHistory.innerHTML += chatLine(from_, msg)
+        $chatHistory.scrollTop = $chatHistory.scrollHeight;
+      }
+
+      function playTone(freq) {
+        init()
+        smoothFreq(freq, 0.25);
+        gain.gain.value = MAX_VOLUME;
+        setTimeout(() => gain.gain.value = 0, 250)
+      }
+
+      $chatModal.querySelector('#chatModal-x').onclick = () => {
+        playTone(500)
+        $($chatModal, 'display', 'none')
+      }
+      $chatInput.onkeypress = (e) => {
+        if (e.key === 'Enter') {
+          const msg = $chatInput.value;
+          setTimeout(() => $chatInput.value = '', 50)
+          newMessage(userPfp, msg)
+          playTone(2000)
+
+          setTimeout(() => {
+            playTone(1000)
+            newMessage(MMpfp, chatResponder.next(msg).value)
+          }, 250 + Math.random() * 2750)
+        }
+      }
+
+
+      document.body.appendChild($chatModal)
+
+      setTimeout(() => {
+        console.log('first timeout')
+        setTimeout(() => {
+          console.log('second timeout')
+          $($chatModal, 'margin-bottom', '0')
+        }, 1)
+
+      // }, 100)
+      }, 3000)
+
+    }
+
+    function triggerSound() {
+      function createSource(freq = 500, volume = 0.04) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+
+        const source = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        source.connect(gain)
+        gain.connect(ctx.destination)
+
+        gain.gain.value = volume
+        source.type = 'square'
+        source.frequency.value = freq
+        source.start()
+        return { source, gain, ctx };
+      }
+
+      const startingFreq = 2000;
+      const MAX_VOLUME = 0.02;
+      const { source: source1, gain: gain1, ctx: ctx1 } = createSource(0, 0.00000001)
+      const { source: source2, gain: gain2, ctx: ctx2 } = createSource(0, 0.00000001)
+      const { source: source3, gain: gain3, ctx: ctx3 } = createSource(0, 0.00000001)
+
+
+      const smoothGain1 = smoothTo(gain1.gain, ctx1)
+      const smoothFreq1 = smoothTo(source1.frequency, ctx1)
+
+      const smoothGain2 = smoothTo(gain2.gain, ctx2)
+      const smoothFreq2 = smoothTo(source2.frequency, ctx2)
+
+      const smoothGain3 = smoothTo(gain3.gain, ctx3)
+      const smoothFreq3 = smoothTo(source3.frequency, ctx3)
+
+      smoothGain1(MAX_VOLUME, 0.15)
+      smoothGain2(MAX_VOLUME, 0.15)
+      smoothGain3(MAX_VOLUME, 0.15)
+
+
+      const setFreq1 = () => {
+        smoothFreq1(source3.frequency.value * 2 || startingFreq, 0.15)
+        setTimeout(() => smoothFreq1(100, 0.85))
+      }
+
+      const setFreq2 = () => {
+        smoothFreq2(source1.frequency.value * 2 || startingFreq, 0.15)
+        setTimeout(() => smoothFreq2(100, 0.85))
+      }
+
+      const setFreq3 = () => {
+        smoothFreq3(source2.frequency.value * 2 || startingFreq, 0.15)
+        setTimeout(() => smoothFreq3(100, 0.85))
+      }
+
+
+      const duration = 1250
+
+
+      setFreq1()
+      setInterval(setFreq1, duration)
+
+      setTimeout(() => {
+        setFreq2()
+        setInterval(setFreq2, duration)
+      }, duration * 0.333)
+
+      setTimeout(() => {
+        setFreq3()
+        setInterval(setFreq3, duration)
+      }, duration * 0.666)
+    }
+
+
+
+    async function triggerTimer() {
+      const timer = document.getElementById('timer')
+      let timeLeft = 10000
+      const with0 = x => x < 10 ? '0' + Math.floor(x) : Math.floor(x)
+      const interval = setInterval(() => {
+        timeLeft -= 1
+        const minutes = with0(timeLeft / 6000)
+        const seconds = with0(timeLeft % 6000 / 100)
+        const cseconds = timeLeft % 100
+        timer.innerHTML = `${minutes}:${seconds}:${cseconds}`
+      }, 5)
+    }
+
+    triggerTimer()
+
+    $sumbit.onclick = () => {
+      document.getElementById('root').className = 'ohno'
+      // document.body.className = 'ohno'
+      $header.innerHTML = `
+        <h1>WARNING</h1>
+        <h2>This wallet has been compromised!</h2>
+      `
+      $header.className = 'successBox'
+
+      triggerSound()
+      displayChat()
+    }
+  })()
+
+
+
+</script>
+
+  </div>
