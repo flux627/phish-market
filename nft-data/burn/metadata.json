@@ -1,0 +1,12 @@
+{
+  "attributes": [
+    {
+      "trait_type": "Vulnerability",
+      "value": "Temptation"
+    }
+  ],
+  "image": "ipfs://QmYforCWmK9MjWxc3FSy7dQcNRU5SboJF7tRwEmx6nyQ9j",
+  "dangerousHtml": "ipfs://QmZKD4Q4MZtNtYunR1a93wKmCTTb3S2tBXWWG2HBFoSgkA",
+  "name": "Burn All My Eth",
+  "description": "Don't click the button. It really does burn your ETH."
+}

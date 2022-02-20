@@ -1,12 +1,12 @@
 {
   "attributes": [
     {
-      "trait_type": "",
-      "value": ""
+      "trait_type": "Vulnerability",
+      "value": "Social Engineering"
     }
   ],
   "image": "ipfs://QmUkonC35RXKofBeVekVdYAiZCXRhCRrJoYFduSgcWf5Tj",
   "dangerousHtml": "ipfs://QmcD6wyrfERciZNNbv1hgWtopaK1dbpLCe1UE7d8DoetQ5",
-  "name": "",
-  "description": ""
+  "name": "Act Fast",
+  "description": "Don't Wait"
 }

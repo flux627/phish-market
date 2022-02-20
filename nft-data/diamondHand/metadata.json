@@ -1,12 +1,12 @@
 {
   "attributes": [
     {
-      "trait_type": "",
-      "value": ""
+      "trait_type": "Vulnerability",
+      "value": "Bait and Switch"
     }
   ],
-  "image": "ipfs://QmUkonC35RXKofBeVekVdYAiZCXRhCRrJoYFduSgcWf5Tj",
-  "dangerousHtml": "ipfs://QmVK2Y7pzGnwU2GbJkzG9GR8TTaoQpRuAvxg8XoxwHacGZ",
+  "image": "ipfs://QmQePykWYurenQMXYamdeVXoJfafAQngUo6e7KtHfvuLPx",
+  "dangerousHtml": "ipfs://QmXcXRnncpmvmyHoypqJQTtK6dgsX4fRaJpa4G33BYd65b",
   "name": "Diamond Hands",
   "description": ""
 }
