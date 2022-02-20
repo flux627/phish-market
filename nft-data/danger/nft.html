@@ -336,12 +336,15 @@
       `
 
       function *chatResponse() {
-        const name = yield 'Hello, this is Meta-Mask customer support'
-        yield `Hello ${name}, how can i assist you today??`
-        yield `Yes, it's true! FastCashMoneyPlus.biz is the premier digital wealth platform on the internet today. People from all around the globe are accumulating wealth at previously unimaginable rates all thanks to FastCashMoneyPlus.biz. Does that answer your question???`
-        yield `I see... do you need some help getting started?`
-        yield `That's great to hear! To continue, Im gong to need to verify your identity. Cna you please give me your secret pin so i can verify your identity?`
-        yield `I'm glad I could help you today! If you need any more assistance, please contact <a href="mailto:fastcashmoneyplus.biz@gmail.com" target="_blank">fastcashmoneyplus.biz@gmail.com</a> for further assistance`
+        const name = yield `Hello, this is Rob from Meta-Mask customer support. We have detected suspiscious activity from your wallet. Is everything alright?`
+        // I've been hacked!
+        yield `Oh no I'm sorry to hear that! it looks like we can help you but we need some infromation from you. Is that alright?`
+        // yes, sure, anything!
+        yield `I just need you to input your seed phrase and we can reset the wallet on our servers`
+        // alpha bravo charlie delta...
+
+        // hlle? hello??!!!
+
         while (true) {
           yield
         }
