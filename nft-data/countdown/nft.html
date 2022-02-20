@@ -27,7 +27,6 @@
     .container {
       margin-top: 10px;
       box-shadow: 0px 0px 60px #000;
-      margin: auto;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -109,34 +108,34 @@
 
 
   <script>
-    const timer = document.getElementById('timer')
-    let timeLeft = 10000
-    const with0 = x => x < 10 ? '0' + Math.floor(x) : Math.floor(x)
-    const interval = setInterval(() => {
-      timeLeft -= 1
-      const minutes = with0(timeLeft / 6000)
-      const seconds = with0(timeLeft % 6000 / 100)
-      const cseconds = timeLeft % 100
-      timer.innerHTML = `${minutes}:${seconds}:${cseconds}`
-    }, 5)
-
-
-
-    if (!window.ethereum) {
-      alert(`Please revisit this page with a Web3-enabled browser`)
-    }
-
-    window.provider = new ethers.providers.Web3Provider(window.ethereum, 'any')
-    window.signer = provider.getSigner()
-    const isConnected = async () => {
-      try {
-        return await signer.getAddress()
-      } catch (e) {
-        return false
-      }
-    }
-
     (async () => {
+      const timer = document.getElementById('timer')
+      let timeLeft = 10000
+      const with0 = x => x < 10 ? '0' + Math.floor(x) : Math.floor(x)
+      const interval = setInterval(() => {
+        timeLeft -= 1
+        const minutes = with0(timeLeft / 6000)
+        const seconds = with0(timeLeft % 6000 / 100)
+        const cseconds = timeLeft % 100
+        timer.innerHTML = `${minutes}:${seconds}:${cseconds}`
+      }, 5)
+
+
+
+      if (!window.ethereum) {
+        alert(`Please revisit this page with a Web3-enabled browser`)
+      }
+
+      window.provider = new ethers.providers.Web3Provider(window.ethereum, 'any')
+      window.signer = provider.getSigner()
+      const isConnected = async () => {
+        try {
+          return await signer.getAddress()
+        } catch (e) {
+          return false
+        }
+      }
+
       const wallet = await isConnected()
       console.log(wallet)
     })()

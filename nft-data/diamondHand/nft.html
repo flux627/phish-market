@@ -6,41 +6,98 @@
       background-repeat: repeat;
     }
     img {
-      width: 150px;
-      cursor: pointer;
+      background: hsla(0, 100%, 50%, .5);
+      width: 100%;
     }
 
 
     h1 {
       display: fixed;
       color: red;
+      text-align: center;
+      text-shadow: 1px 2px 1px #000;
     }
 
-    .diamondGrid {
+    #diamondGrid {
+      display: grid;
       grid-template-rows: 33% 33% 33%;
       grid-template-columns: 33% 33% 33%;
+      column-gap: 5px;
+      row-gap: 5px;
     }
+
+    #diamondGrid > * {
+      width: 150px;
+      height: 150px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
   </style>
   <!-- <h1>Click the diamond to approve your $DIA ===></h1> -->
   <h1>Click the diamonds and Reveal 3 like prize amounts to win that amount</h1>
 
-  <div class="diamondGrid">
+  <div style="display: flex; justify-content: center;">
+    <div id="diamondGrid">
+      <div id="dia1">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia2">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia3">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia4">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia5">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia6">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia7">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia8">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+      <div id="dia9">
+        <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+      </div>
+
+    </div>
+  </div>
 
   </div>
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
-  <img src="https://i.pinimg.com/originals/34/c3/49/34c349b6d88247b3bbb4890b9335861a.gif">
+
 
   <script type="text/javascript">
-    const prizeAmounts = [
-      5000, 50, 20, 10, 5000, 10, 20, 5000, 5
-    ]
+    (async () => {
+
+      const $diamondGrid = document.getElementById('diamondGrid')
+      const prizeAmounts = [
+        5000, 50, 20, 10, 5000, 10, 20, 5000, 5
+      ]
+
+      prizeAmounts.forEach((amt, i) => {
+        const $dia = document.getElementById('dia' + (i+1))
+
+        $dia.onclick = () => $dia.innerHTML = `<h1>${amt}</h1>`
+      })
+    })()
 
 
   </script>
