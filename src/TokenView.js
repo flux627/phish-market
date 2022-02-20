@@ -75,4 +75,6 @@ const DangerBox = styled.div`
   border: #ffffff82 3px solid;
   background: #00000026;
   box-shadow: #00000052 8px 8px;
+  display: grid;
+  align-items: stretch;
 `
