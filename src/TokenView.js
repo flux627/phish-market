@@ -65,9 +65,9 @@ export function TokenView() {
     <div>{`${tokenId}: ${metadata ? metadata.name : '...'}`}</div>
     {dangerousHtml && <DangerBox id='danger-box' html={dangerousHtml} />}
     {metadata?.description && <div>Description:<br />{metadata.description}</div>}
-    <ButButtonWrap>
+    <BuyButtonWrap>
       <BuyButton id={'buy-button'}>Buy NFT (0.2 ETH)</BuyButton>
-    </ButButtonWrap>
+    </BuyButtonWrap>
   </div>
 }
 
@@ -83,7 +83,7 @@ const DangerBox = styled(InnerHTML)`
   font-family: 
 `
 
-const ButButtonWrap = styled.div`
+const BuyButtonWrap = styled.div`
   margin-top: 20px;
   text-align: center;
 `
@@ -103,5 +103,4 @@ const BuyButton = styled.button`
     box-shadow: none;
     margin: 8px -8px -8px 8px;
   }
-  
 `
