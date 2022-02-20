@@ -5,6 +5,7 @@ import phishLogo from "./images/phish.png"
 import onlineIcon from "./images/online.png"
 import {createContractHelper} from "./createContractHelper";
 import PhishMarketABI from "./artifacts/contracts/PhishMarket.sol/PhishMarket.json";
+import {Link} from "react-router-dom";
 
 const phishMarketAddress = process.env.REACT_APP_CONTRACT_ADDRESS
 const correctChainId = process.env.REACT_APP_LOCAL_DEV === 'true' ? 1337 : 1
@@ -50,7 +51,7 @@ function Header() {
     [ConnectedAddress]
     : <ConnectWalletButton onClick={connectToWeb3}>Connect Wallet</ConnectWalletButton>
 
-  const logo = <LogoDiv>
+  const logo = <LogoDiv to="/">
     <img src={phishLogo} />phish.market
   </LogoDiv>
 
@@ -119,7 +120,7 @@ const HamburgerDiv = styled.div`
   padding: 20px 15px 0px 0px;
 `;
 
-const LogoDiv = styled.div`
+const LogoDiv = styled(Link)`
   font-size: 32px;
   img {
     height: 40px;

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export function GalleryItem({ tokenId, metadataUri }) {
   const [metadata, setMetadata] = useState()
@@ -19,7 +20,7 @@ export function GalleryItem({ tokenId, metadataUri }) {
     setImageCid(metadata.image.split('ipfs://')[1])
   }, [metadata])
 
-  return <ItemWrap href={'#'}>
+  return <ItemWrap to={`token/${tokenId}`}>
     {imageCid && <ImagePreviewWrap><ImagePreview src={`https://gateway.pinata.cloud/ipfs/${imageCid}`} /></ImagePreviewWrap>}
     <Title>{`${tokenId}: ${metadata ? metadata.name : '...'}`}</Title>
   </ItemWrap>
@@ -41,7 +42,7 @@ const ImagePreviewWrap = styled.div`
   display: flex;
 `
 
-const ItemWrap = styled.a`
+const ItemWrap = styled(Link)`
   width: 300px;
   background: #aaa;
   border: double 11px white;

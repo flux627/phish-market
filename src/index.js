@@ -7,6 +7,7 @@ import {
 import './index.css'
 import App from "./App";
 import {Gallery} from "./Gallery";
+import {TokenView} from "./TokenView";
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +17,7 @@ render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/" element={<Gallery />} />
+        <Route path="/token/:tokenIdStr" element={<TokenView />} />
       </Route>
     </Routes>
   </BrowserRouter>,
