@@ -1,4 +1,5 @@
 import {useContext, useEffect, useState} from "react";
+import InnerHTML from 'dangerously-set-html-content'
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import {createContractHelper} from "./createContractHelper";
@@ -62,14 +63,15 @@ export function TokenView() {
 
   return <div>
     <div>{`${tokenId}: ${metadata ? metadata.name : '...'}`}</div>
-    {dangerousHtml && <DangerBox dangerouslySetInnerHTML={{ __html: dangerousHtml}} />}
+    {dangerousHtml && <DangerBox><InnerHTML html={dangerousHtml} /></DangerBox>}
+    {metadata?.description && <div>Description:<br />{metadata.description}</div>}
   </div>
 }
 
 const DangerBox = styled.div`
   width: 600px;
   height: 600px;
-  margin: 20px auto;
+  margin: 40px auto;
   border: #ffffff82 3px solid;
   background: #00000026;
   box-shadow: #00000052 8px 8px;
